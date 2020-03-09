@@ -1,0 +1,322 @@
+html, body {
+    margin: 0;
+    padding: auto;
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+nav {
+	margin-bottom: -30em;
+}
+
+.intro {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	padding: 10em;
+	margin-top: -.5em;
+}
+
+.background {
+	margin-bottom: 9.2em;
+	padding-top: -6em;
+}
+
+.background h2 {
+	color: #EE0000;
+	font-size: 4.5em;
+	font-family: 'Montserrat', sans-serif;
+	line-height: 2em;
+}
+
+.background p {
+	color: #585858;
+	font-size: 2em;
+	font-family: 'Montserrat', sans-serif;
+	line-height: 2em;
+	text-align: center;
+}
+
+.view-work {
+  margin-top: 1.5em;
+  background-color: transparent;
+  padding: .7em;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 2em;  
+  text-transform: uppercase;
+  border-color: white;
+}
+
+.view-work:hover {
+	border-color: #EE0000;
+}
+
+.view-work a{
+  text-decoration: none;
+  color: white;
+}
+
+
+.about-me {
+	background-color: #0C090A;
+	/*padding-top: -10em;
+	padding-bottom: 4em;*/
+	padding-bottom: 3em;
+	width: 100%;
+}
+
+.about-me-title {
+	text-align: center;
+	font-size: 3em;
+	margin-top: -1em;
+	margin-bottom: 1em;
+	color: #E5E4E2;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	padding-top: 10em;
+	text-align: center;
+	width: 80%;
+  	margin: 0 auto;
+}
+
+.button {
+	text-align: center;
+}
+ 
+.card1, .card2, .card3 {
+	background-color: #E5E4E2;
+	margin: auto;
+	font-size: 1.6em;
+	margin-top: 3em;
+	padding: .7em 1em;
+	flex-grow: 0;
+    flex-basis: 1;
+    text-align: center;
+}
+
+.card1, .card2, .card3 p {
+	color: #0C090A;
+	line-height: 1.5em;
+	position: relative;
+	display: inline;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+.card1 h3 {
+	text-align: center;
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 1em;
+	margin-top: 2em;
+}
+
+.picture {
+	width: 20%; 
+	border-radius: 5em;
+	margin-top: -8em;
+	border: .1em solid #0C090A;
+	margin-bottom: -2em;
+}
+
+/* using media query because picture doesn't look good responsively past 800px */
+@media screen and (max-width: 800px) {
+	 .picture {
+		width: 30vw; 
+		border-radius: 5em;
+		margin-top: -8em;
+		border: .1em solid #0C090A;
+		margin-bottom: -2em;
+	}
+}
+
+.card2 h3 {
+	text-align: center;
+	display: block;
+	position: relative;
+	padding-bottom: 1em;
+	margin-top: -2.8em;
+}
+
+.card3 h3 {
+	text-align: center;
+	display: block;
+	position: relative;
+	padding-bottom: 1em;
+	margin-top: -2.8em;
+}
+
+.contact-title {
+	text-align: center;
+}
+
+.skills-title {
+	text-align: center;
+}
+
+.skills {
+	position: relative;
+	display: inline-block;
+}
+
+.code-icon {
+	background-color: white;
+	height: 10vh;
+	margin-top: 1em;
+}
+
+.social-icon {
+	background-color: #E5E4E2;
+	height: 10vh;
+	margin-top: 1em;
+}
+
+.card2 div {
+	display: block;
+	padding: .5em;
+	margin-top: -1em;
+	position: relative;
+	text-align: center;
+}
+
+.card2 h5{
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+	display: block;
+}
+
+.card2 h5::after{
+  content: '';
+  border-bottom: 1px solid #000;
+  width: 75%;
+  margin-left: 1em;
+  display: block;
+  position: relative;
+}
+
+.card2 .other::after{
+  content: '';
+  border-bottom: 1px solid #000;
+  width: 60%;
+  margin-left: 1.2em;
+  display: block;
+}
+
+.card2 ul{
+	text-align: center;
+	position: relative;
+	display: block;
+	font-size: 1em;
+	padding: 1em;
+}
+
+.card2 li{
+	font-size: 1.2em;
+	list-style-type: none;
+	text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+	 .card2 li{
+		font-size: 1em;
+		list-style-type: none;
+		padding-right: 1em; 
+	}	
+}
+
+.card3 span > a {
+	font-size: 2em;
+	position: relative;
+	display: inline;
+	margin: .9em;
+	text-align: center;
+	padding: .2em;
+}
+
+.fa {
+  width: 3em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa-linkedin {
+  color: blue;
+}
+
+.fa-github {
+  color: black;
+}
+
+.projects {
+	background-color: black;
+	padding: 9em;
+	font-family: 'Montserrat', sans-serif;
+	width: 100%;
+  	margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+	 .projects {
+		background-color: black;
+		padding-top: 10em;
+		padding-right: 100em;
+		font-family: 'Montserrat', sans-serif;
+		width: 100%;
+	  	margin: 0 auto;
+	  	text-align: center;
+	}	
+
+	.grid {
+		display: grid;
+		justify-content: center;
+		align-items: center;
+	  	grid-template-columns: repeat(auto-fit, minmax(40em, 1fr));
+	 	grid-template-rows: repeat(100em, minmax(40em, 1fr));
+	  	grid-row-gap: 1.5em;
+	  	grid-column-gap: 1.5em;
+	  	text-align: center;
+	}
+}
+
+.projects h4 {
+	text-align: center;
+	margin-top: -5em;
+}
+
+.grid {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+  	grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+ 	grid-template-rows: repeat(auto-fit, minmax(10em, 1fr));
+  	grid-row-gap: 1.5em;
+  	grid-column-gap: 1.5em;
+  	text-align: center;
+}
+
+footer {
+	background-color: red;
+	padding-bottom: 1em;
+	font-family: 'Montserrat', sans-serif;
+}
+
+footer p{
+	text-align: center;
+}
+
+
+
