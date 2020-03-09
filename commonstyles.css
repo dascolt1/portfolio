@@ -1,4 +1,4 @@
-.logo, .project, .about {
+.logo, .projects, .about {
 	color: white !important;
 	font-size: 1.5em;
 }
@@ -6,7 +6,13 @@
 .navbar {
 	background-color: transparent !important;
 	border-bottom: none !important;
+	width: 100% !important;
 }
+
+.collapse .navbar-collapse {
+ 	width: 100% !important;
+ }
+ 
 
 .navbar a:hover {
 	color: #EE0000 !important;

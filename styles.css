@@ -267,13 +267,35 @@ nav {
 	font-family: 'Montserrat', sans-serif;
 	width: 100%;
   	margin: 0 auto;
+  	text-align: center;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
 	 .projects {
 		background-color: black;
-		padding-top: 10em;
-		padding-right: 100em;
+		padding: 8em;
+		font-family: 'Montserrat', sans-serif;
+		width: 100%;
+	  	margin: 0 auto;
+	  	text-align: center;
+	}	
+
+	.grid {
+		display: grid;
+		justify-content: center;
+		align-items: center;
+	  	grid-template-columns: repeat(auto-fit, minmax(40em, 1fr));
+	 	grid-template-rows: repeat(10em, minmax(40em, 1fr));
+	  	grid-row-gap: 1.5em;
+	  	grid-column-gap: 1.5em;
+	  	text-align: center;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	 .projects {
+		background-color: black;
+		padding: 7em;
 		font-family: 'Montserrat', sans-serif;
 		width: 100%;
 	  	margin: 0 auto;
@@ -309,13 +331,14 @@ nav {
 }
 
 footer {
-	background-color: red;
+	background-color: #0C090A;
 	padding-bottom: 1em;
 	font-family: 'Montserrat', sans-serif;
 }
 
 footer p{
 	text-align: center;
+	color: white;
 }
 
 
