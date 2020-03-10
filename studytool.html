@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>color game</title>
+</head>
+
+<style type="text/css">
+
+	*{
+		background-color: orange;
+	}
+
+	.headerContainer {
+		display: flex;
+  		justify-content: center;
+  		flex-direction: column;
+  		text-align: center;
+  		padding: 5px;
+	}
+
+	.headerContainer h2 {
+		margin: 15px;
+		color: white;
+	}
+
+	.container {
+		display: grid;
+		text-align: center;
+	}
+
+	.headerContainer {
+		flex-direction: row;
+	}
+
+	#block1 {
+		background-color: red;
+		height:350px;
+   		width:350px;
+	}
+
+	#block2 {
+		background-color: blue;
+		height:350px;
+   		width:350px;
+	}
+
+
+	#block3 {
+		background-color: purple;
+		height:350px;
+   		width:350px;
+	}
+
+	#block4 {
+		background-color: black;
+		height:350px;
+   		width:350px;
+	}
+
+	#block5 {
+		background-color: green;
+		height:350px;
+   		width:350px;
+	}
+
+	#block6 {
+		background-color: yellow;
+		height:350px;
+   		width:350px;
+	}
+
+</style>
+
+
+<body onload="generateRandomColor()">
+		<div class="headerContainer">
+			<h2 id="level">Level 1</h2>
+			<h2 id="targetColor">color</h2>
+			<h2 id="score">score</h2>
+			<h2 id="lives"></h2>
+		</div>
+		<div class="container">
+			
+			<div class="blocks">
+				<button onclick="checkColor(this)" id="block1"></button>
+				<button onclick="checkColor(this)" id="block2"></button>
+				<button onclick="checkColor(this)" id="block3"></button>
+				<button onclick="checkColor(this)" id="block4"></button>
+				<button onclick="checkColor(this)" id="block5"></button>
+				<button onclick="checkColor(this)" id="block6"></button>
+			</div>
+
+		</div>
+	
+</body>
+
+<script type="text/javascript">
+	//getting elements into js
+	let red = document.getElementById('block1');
+	let blue = document.getElementById('block2');
+	let purple = document.getElementById('block3');
+	let black = document.getElementById('block4');
+	let green = document.getElementById('block5');
+	let yellow = document.getElementById('block6');
+	let level = document.getElementById('level');
+	let targetColor = document.getElementById('targetColor');
+	let score = document.getElementById('score');
+	let lives = document.getElementById('lives');
+
+	//color array to randomly output one so user can guess right color
+	let colors = ['кра́сный','си́ний','зелёный','фиоле́товый','чёрный','жёлтый'];
+
+	//wrong answer array to show user what they got wrong and need to study
+	let wrongAnswers = [];
+
+	//random generator for colors
+	function generateRandomColor(){
+		let random = Math.floor(Math.random() * 6);
+		targetColor.innerHTML = colors[random];
+	}
+
+	//score variable increment by 100 each correct guess
+	let playerScore = 0;
+
+	//player lives and documenting them to screen
+	let playerLives = 5;
+	lives.innerHTML = "Lives: " + playerLives;
+
+	score.innerHTML = playerScore;
+
+	//dictionary of rgb values to make into text
+	function rgbToColor(color){
+
+    var colors = {
+    	"rgb(255, 0, 0)": "кра́сный",
+    	"rgb(0, 0, 255)": "си́ний",
+    	"rgb(0, 128, 0)": "зелёный",
+    	"rgb(0, 0, 0)": "чёрный",
+    	"rgb(128, 0, 128)": "фиоле́товый",
+    	"rgb(255, 255, 0)": "жёлтый"
+    };
+
+    if (typeof colors[color] != 'undefined'){
+        return colors[color];
+    }
+
+    return false;
+}
+
+//function to determine if user is correct
+function checkColor(el){
+
+		//gets rbga value for background color of button from css properties
+		let colorGuess = window.getComputedStyle(el).getPropertyValue("background-color");
+
+		//checks if rgb is color
+		if(rgbToColor(colorGuess) == targetColor.innerHTML){
+			playerScore += 100;
+			score.innerHTML = playerScore;
+			generateRandomColor();
+		}else {
+			wrongAnswers.push(colorGuess);
+			playerLives--;
+
+			if(playerLives < 0){
+				playerLives = 0;
+			}
+
+			lives.innerHTML = "Lives: " + playerLives;
+			score.innerHTML = playerScore;
+			generateRandomColor();
+		}
+
+		if(playerScore < 500){
+			level.innerHTML = "Level 1";
+		}else if(playerScore >= 500 && playerScore < 1000){
+			level2();
+			level.innerHTML = "Level 2";
+		}else if(playerScore >= 1000 && playerScore < 1500){
+			level3();
+			level.innerHTML = "Level 3";
+		}else{
+			level4();
+			level.innerHTML = "Level 4";
+		}
+
+		if(playerLives == 0) {
+			alert("You lost :( refresh page to play again");
+		}
+	}
+
+	function level2() {
+		red.style.backgroundColor = 'blue';
+		blue.style.backgroundColor = 'green';
+		purple.style.backgroundColor = 'black';
+		black.style.backgroundColor = 'yellow';
+		yellow.style.backgroundColor = 'red';
+		green.style.backgroundColor = 'purple';
+	}
+	
+	function level3() {
+		red.style.backgroundColor = 'purple';
+		blue.style.backgroundColor = 'yellow';
+		purple.style.backgroundColor = 'red';
+		black.style.backgroundColor = 'green';
+		yellow.style.backgroundColor = 'black';
+		green.style.backgroundColor = 'blue';
+	}
+
+	function level4() {
+		red.style.backgroundColor = 'red';
+		blue.style.backgroundColor = 'blue';
+		purple.style.backgroundColor = 'purple';
+		black.style.backgroundColor = 'green';
+		yellow.style.backgroundColor = 'black';
+		green.style.backgroundColor = 'yellow';
+	}
+
+</script>
+</html>
