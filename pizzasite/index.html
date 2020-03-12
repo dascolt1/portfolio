@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- This website was created by Web Enterprise Solutions LLC.  Includes responsive design, cross browser compatibility and 
+		  includes a javascript open and close sign
+	 -->
+
+
+	<title>Tony's Pizzeria</title>
+
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta charset="UTF-8">
+	<meta name="description" content="Personalized website to display Tony's pizzeria">
+	<meta name="Pizza, Food, Restaurant, Take out" content="menu and ">
+	<meta name="Web Enterprise Solutions LLC" content="Tony's Pizzeria">
+
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<!-- roboto font from google -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+
+	<!-- link to external stylesheet -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+
+	<div>
+		<ul class="nav nav-pills navbar-fixed-top">
+			<li>
+				<a class="scroll" href="index.html"><i>Tony's Pizzeria</i></a>
+			</li>
+			<li class="pull-right">
+				<a class="scroll" href="specials.html">Specials</a>
+			</li>
+			<li class="pull-right">
+				<a class="scroll" href="menu.html">Menu</a>
+			</li>
+		</ul>
+	</div>
+
+	<article class="main">
+
+		<div class="name">
+			<h2 class="tony"><i>Tony's Pizzeria</i></h2>
+			<h4 class="address"><strong>533 Green Pond Road Rockaway, NJ</strong></h4>
+			<h5 class="telephone"><a class="A" href="tel:973-625-0004"><strong>973-625-0004</strong></a></h5>
+		</div>
+		
+		<div class="about">
+			<h2 class="aboutTitle">About Us</h2>
+			<p class="location">We are located at 533 Green Pond Road in Rockaway, NJ. We serve an array of fine italian cuisine.</p>
+			<h2 class="dine">Dine in or Take Out!</h2>
+			<h4 class="menu">Click <a class="menuLink" href="menu.html">here</a> to view our menu.</h4>
+			
+		</div>
+
+			<div class="info">
+				<div class="ETA">Pickup ETA</div>
+				<div class="pickupMin"><p class="mins">25-30 mins</p></div>
+			</div>
+
+		<div class="hours">
+			<div class="hoursHeading">
+				<h3 class="h3Hours">Hours</h3>
+				<h5 id="closedOpen"></h5>
+			</div>
+			<table>
+			  <tr>
+			    <th>Days</th>
+			    <th>Hours</th>
+			  </tr>
+			  <tr>
+			    <td>Monday</td>
+			    <td style="color: red">closed</td>
+			  </tr>
+			  <tr>
+			    <td>Tuesday</td>
+			    <td>11:00am - 9:00pm</td>
+			  </tr>
+			  <tr>
+			    <td>Wednesday</td>
+			    <td>11:00am - 9:00pm</td>
+			  </tr>
+			  <tr>
+			    <td>Thursday</td>
+			    <td>11:00am - 9:00pm</td>
+			  </tr>
+			  <tr>
+			    <td>Friday</td>
+			    <td>11:00am - 9:00pm</td>
+			  </tr>
+			   <tr>
+			    <td>Saturday</td>
+			    <td>11:00am - 9:00pm</td>
+			  </tr>
+			   <tr>
+			    <td>Sunday</td>
+			    <td>11:00am - 9:00pm</td>
+			  </tr>
+			</table>
+
+		</div>
+
+	</article>
+
+	<!-- javascript to display open or close sign -->
+	<script type="text/javascript">
+		
+		//activates sign to be either closed or open depending on time of day
+		const now = new Date();
+		let sign = document.getElementById('closedOpen');
+
+		if(now.getHours() >= 11 && now.getHours() < 21) {
+			sign.innerHTML = "Open";
+			sign.style.color = 'green';
+			sign.style.fontSize = '18px';
+		}else {
+			sign.innerHTML = "Closed";
+			sign.style.color = 'red';
+			sign.style.fontSize = '18px';
+		}
+	</script>
+
+
+</body>
+
+</html>
